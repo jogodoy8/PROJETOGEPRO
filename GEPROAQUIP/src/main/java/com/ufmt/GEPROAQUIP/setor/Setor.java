@@ -28,6 +28,7 @@ public class Setor {
     private String nome;
     @Column
     private String descricao;
+    
     @ManyToOne
     @JoinColumn(name = "unidade_id")
     private Unidade unidade_id;

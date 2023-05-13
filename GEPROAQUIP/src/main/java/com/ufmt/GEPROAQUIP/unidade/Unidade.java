@@ -26,6 +26,7 @@ public class Unidade {
     @Id
     @GeneratedValue(generator = "seqUnidade", strategy = GenerationType.SEQUENCE)
     private int id;
+
     @OneToMany(mappedBy = "unidade_id")
     private List<Setor> setores;
  }
