@@ -27,6 +27,6 @@ public class Unidade {
     @GeneratedValue(generator = "seqUnidade", strategy = GenerationType.SEQUENCE)
     private int id;
 
-    @OneToMany(mappedBy = "unidade_id")
+    @OneToMany(mappedBy = "unidade")
     private List<Setor> setores;
  }

@@ -18,8 +18,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "cadastroFornecedor")
-@SequenceGenerator(name = "seqCadastroFornecedor", sequenceName = "seq_cadastroFornecedor_id", allocationSize = 1)
+@Table(name = "cadastro_fornecedor")
+@SequenceGenerator(name = "seqCadastroFornecedor", sequenceName = "seq_cadastro_fornecedor_id", allocationSize = 1)
 @Getter
 @Setter
 
@@ -42,6 +42,6 @@ public class CadastroFornecedor {
     @Column
     private String fone;
 
-    @OneToMany(mappedBy = "cadastroFornecedor_id")
+    @OneToMany(mappedBy = "cadastro_fornecedor_id")
     private List<NotaFiscal> notasFiscais;
 }

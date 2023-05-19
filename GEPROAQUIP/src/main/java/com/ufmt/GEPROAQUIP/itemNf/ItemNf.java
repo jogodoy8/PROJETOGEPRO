@@ -16,8 +16,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "itemNf")
-@SequenceGenerator(name = "seqItemNf", sequenceName = "seq_itemNf_id", allocationSize = 1)
+@Table(name = "item_nf")
+@SequenceGenerator(name = "seqItemNf", sequenceName = "seq_item_nf_id", allocationSize = 1)
 @Getter
 @Setter
 
@@ -34,7 +34,7 @@ public class ItemNf {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "notaFiscal_id")
+    @JoinColumn(name = "nota_fiscal_id")
     private NotaFiscal notaFiscal_id;
     
 }

@@ -17,8 +17,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "statusTr")
-@SequenceGenerator(name = "seqStatusTr", sequenceName = "seq_statusTr_id", allocationSize = 1)
+@Table(name = "status_tr")
+@SequenceGenerator(name = "seqStatusTr", sequenceName = "seq_status_tr_id", allocationSize = 1)
 @Getter
 @Setter
 public class StatusTr {
@@ -30,7 +30,7 @@ public class StatusTr {
     @Column
     private String andamento;
 
-    @OneToMany(mappedBy = "statusTr_id")
+    @OneToMany(mappedBy = "status_tr_id")
     private List<TermoReferencia> TermosReferencia;
        
 }

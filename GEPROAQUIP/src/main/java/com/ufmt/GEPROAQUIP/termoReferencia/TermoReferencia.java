@@ -21,8 +21,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "termoReferencia")
-@SequenceGenerator(name = "seqTermoReferencia", sequenceName = "seq_TermoReferencia_id", allocationSize = 1)
+@Table(name = "termo_referencia")
+@SequenceGenerator(name = "seqTermoReferencia", sequenceName = "seq_termo_referencia_id", allocationSize = 1)
 @Getter
 @Setter
 
@@ -42,9 +42,9 @@ public class TermoReferencia {
     private String objeto;
 
     @ManyToOne
-    @JoinColumn(name = "statusTr_id")
+    @JoinColumn(name = "status_tr_id")
     private StatusTr statusTr_id;
 
-    @OneToMany(mappedBy = "itemTr_id")
+    @OneToMany(mappedBy = "termoReferencia_id")
     private List<ItemTr> itensTr;
 }

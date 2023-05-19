@@ -17,12 +17,13 @@ import javax.persistence.Table;
 import com.ufmt.GEPROAQUIP.cadastroFornecedor.CadastroFornecedor;
 import com.ufmt.GEPROAQUIP.itemNf.ItemNf;
 import com.ufmt.GEPROAQUIP.notaFiscal.NotaFiscal;
+import com.ufmt.GEPROAQUIP.processoPagamento.ProcessoPagamento;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "notaFiscal")
+@Table(name = "nota_fiscal")
 @SequenceGenerator(name = "seqNotaFiscal", sequenceName = "seq_notaFiscal_id", allocationSize = 1)
 @Getter
 @Setter
@@ -45,11 +46,15 @@ public class NotaFiscal {
     @Column
     private boolean  pagamento; 
 
-    @OneToMany(mappedBy = "notaFiscal_id")
+    @OneToMany(mappedBy = "nota_fiscal_id")
     private List<ItemNf> itensNf;
     
     @ManyToOne
-    @JoinColumn(name = "cadastroForncedor_id")
+    @JoinColumn(name = "cadastro_forncedor_id")
     private CadastroFornecedor cadastroFornecedor_id;
+
+    @ManyToOne
+    @JoinColumn(name = "processo_pagamento_id")
+    private ProcessoPagamento processoPagamento_id;
     
 }

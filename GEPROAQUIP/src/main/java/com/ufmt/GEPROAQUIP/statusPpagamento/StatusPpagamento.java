@@ -18,8 +18,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "statusPpagamento")
-@SequenceGenerator(name = "seqStatusPpagamento", sequenceName = "seq_statusPpagamento_id", allocationSize = 1)
+@Table(name = "status_ppagamento")
+@SequenceGenerator(name = "seqStatusPpagamento", sequenceName = "seq_status_ppagamento_id", allocationSize = 1)
 @Getter
 @Setter
 
@@ -35,6 +35,6 @@ public class StatusPpagamento {
     @Column
     private String ocorrencia;
 
-     @OneToMany(mappedBy = "statusPpagamento_id")
+     @OneToMany(mappedBy = "status_ppagamento_id")
      private List<ProcessoPagamento> processospagamentos;
 }
