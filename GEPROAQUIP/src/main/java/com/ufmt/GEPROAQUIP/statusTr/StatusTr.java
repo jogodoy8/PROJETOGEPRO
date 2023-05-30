@@ -1,5 +1,6 @@
 package com.ufmt.GEPROAQUIP.statusTr;
 
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +27,7 @@ public class StatusTr {
     @GeneratedValue(generator = "seqStatusTr", strategy = GenerationType.SEQUENCE)
     private int id;
     @Column
-    private Data data;
+    private Date data;
     @Column
     private String andamento;
 

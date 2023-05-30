@@ -1,5 +1,6 @@
 package com.ufmt.GEPROAQUIP.statusPpagamento;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -30,7 +31,7 @@ public class StatusPpagamento {
     private int id;
 
     @Column
-    private Data data;
+    private Date data;
     
     @Column
     private String ocorrencia;

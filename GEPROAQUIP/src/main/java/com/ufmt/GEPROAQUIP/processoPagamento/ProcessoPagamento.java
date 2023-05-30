@@ -1,5 +1,6 @@
 package com.ufmt.GEPROAQUIP.processoPagamento;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -36,10 +37,10 @@ public class ProcessoPagamento {
     private String numProtocolo;
     
     @Column
-    private Data dataProt;
+    private Date dataProt;
 
     @Column
-    private Data mesCompetencia;
+    private Date mesCompetencia;
 
     @Column
     private String objeto;
