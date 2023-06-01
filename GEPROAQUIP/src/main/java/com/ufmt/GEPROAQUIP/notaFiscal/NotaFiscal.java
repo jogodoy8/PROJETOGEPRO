@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.ufmt.GEPROAQUIP.cadastroFornecedor.CadastroFornecedor;
 import com.ufmt.GEPROAQUIP.itemNf.ItemNf;
@@ -33,17 +35,18 @@ public class NotaFiscal {
     @Id
     @GeneratedValue(generator = "seqNotaFiscal", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column(name = "numNf", length = 20)
     private String numNf;
-    @Column
+    @Column (name = "data")
+    @Temporal(TemporalType.DATE)
     private Date data;
-    @Column
+    @Column(name = "valor")
     private double valor;
-    @Column
+    @Column(name = "emprenho", nullable = false)
     private boolean  empenho;
-    @Column
+    @Column(name = "liquidacao", nullable = false)
     private boolean  liquidacao;
-    @Column
+    @Column(name = "pagamento", nullable = false)
     private boolean  pagamento; 
 
     @OneToMany(mappedBy = "nota_fiscal_id")

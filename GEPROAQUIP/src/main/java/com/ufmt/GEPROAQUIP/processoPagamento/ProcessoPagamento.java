@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.JoinColumn;
 
 import com.ufmt.GEPROAQUIP.notaFiscal.NotaFiscal;
@@ -33,25 +35,27 @@ public class ProcessoPagamento {
     @Id
     @GeneratedValue(generator = "seqProcessoPagamento", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column(name = "numProtocolo", length = 20)
     private String numProtocolo;
     
-    @Column
+    @Column (name = "dataProt")
+    @Temporal(TemporalType.DATE)
     private Date dataProt;
 
-    @Column
+    @Column (name = "mesCompetencia")
+    @Temporal(TemporalType.DATE)
     private Date mesCompetencia;
 
-    @Column
+    @Column(name = "objeto", length = 100)
     private String objeto;
 
-    @Column
+    @Column(name = "numAta", length = 20)
     private String numAta;
 
-    @Column
+    @Column(name = "numContrato", length = 100)
     private String numContrato;
 
-    @Column
+    @Column(name = "observacao", length = 300)
     private String observacao;
 
     @OneToMany(mappedBy = "processo_pagamento_id")

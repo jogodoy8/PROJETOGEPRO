@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.ufmt.GEPROAQUIP.termoReferencia.TermoReferencia;
 
@@ -26,9 +28,10 @@ public class StatusTr {
     @Id
     @GeneratedValue(generator = "seqStatusTr", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column(name = "data")
+    @Temporal(TemporalType.DATE)
     private Date data;
-    @Column
+    @Column(name = "andamento", length = 200)
     private String andamento;
 
     @OneToMany(mappedBy = "status_tr_id")

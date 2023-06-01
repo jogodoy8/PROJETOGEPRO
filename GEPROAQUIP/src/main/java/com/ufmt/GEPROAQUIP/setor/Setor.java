@@ -24,9 +24,9 @@ public class Setor {
     @Id
     @GeneratedValue(generator = "seqSetor", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column(name = "nome", length = 200)
     private String nome;
-    @Column
+    @Column(name = "descricao", length = 300)
     private String descricao;
 
     @ManyToOne

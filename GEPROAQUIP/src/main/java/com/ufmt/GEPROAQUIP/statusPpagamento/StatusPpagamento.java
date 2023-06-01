@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Id;
 
 import com.ufmt.GEPROAQUIP.processoPagamento.ProcessoPagamento;
@@ -30,10 +32,11 @@ public class StatusPpagamento {
     @GeneratedValue(generator = "seqStatusPpagamento", strategy = GenerationType.SEQUENCE)
     private int id;
 
-    @Column
+    @Column (name = "data")
+    @Temporal(TemporalType.DATE)
     private Date data;
     
-    @Column
+    @Column(name = "ocorrencia", length = 300)
     private String ocorrencia;
 
      @OneToMany(mappedBy = "status_ppagamento_id")

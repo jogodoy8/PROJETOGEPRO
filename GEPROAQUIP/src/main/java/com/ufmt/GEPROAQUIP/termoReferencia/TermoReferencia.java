@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.ufmt.GEPROAQUIP.itemTr.ItemTr;
 import com.ufmt.GEPROAQUIP.statusTr.StatusTr;
@@ -30,15 +32,16 @@ public class TermoReferencia {
     @Id
     @GeneratedValue(generator = "seqTermoReferencia", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column(name = "numProcesso", length = 50)
     private String numProcesso;
-    @Column
+    @Column(name = "tipoProcesso", length = 100)
     private String tipoProcesso;
-    @Column
+    @Column(name = "aberturaProcesso")
+    @Temporal(TemporalType.DATE)
     private Date aberturaProcesso;
-    @Column
+    @Column(name = "numTR", length = 20)
     private String numTR;
-    @Column
+    @Column(name = "objeto", length = 100)
     private String objeto;
 
     @ManyToOne

@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.boot.TempTableDdlTransactionHandling;
 
 import com.ufmt.GEPROAQUIP.notaFiscal.NotaFiscal;
 
@@ -29,17 +33,18 @@ public class CadastroFornecedor {
     @Id
     @GeneratedValue(generator = "seqCadastroFornecedor", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column (name = "data")
+    @Temporal(TemporalType.DATE)
     private Data data;
-    @Column
+    @Column (name = "nome", length = 200)
     private String nome;
-    @Column
+    @Column(name = "cnpj", length = 200)
     private String cnpj;
-    @Column
+    @Column(name = "endereco", length = 200)
     private String endereco;
-    @Column
+    @Column(name = "email", length = 200)
     private String email;
-    @Column
+    @Column(name = "fone", length = 30)
     private String fone;
 
     @OneToMany(mappedBy = "cadastro_fornecedor_id")

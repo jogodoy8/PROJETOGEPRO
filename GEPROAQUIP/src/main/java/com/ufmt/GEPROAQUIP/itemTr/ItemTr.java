@@ -25,11 +25,11 @@ public class ItemTr {
     @Id
     @GeneratedValue(generator = "seqItemTr", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column(name = "quantidade")
     private int quantidade;
-    @Column
+    @Column(name = "descricao", length = 100)
     private String descricao;
-    @Column
+    @Column(name = "valor")
     private double valor;
 
     @ManyToOne

@@ -26,11 +26,11 @@ public class ItemNf {
     @Id
     @GeneratedValue(generator = "seqItemNf", strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column
+    @Column(name = "quantidade")
     private int quantidade;
-    @Column
+    @Column(name = "tipo", length = 100)
     private String tipo;
-    @Column
+    @Column(name = "descricao", length = 100)
     private String descricao;
 
     @ManyToOne
