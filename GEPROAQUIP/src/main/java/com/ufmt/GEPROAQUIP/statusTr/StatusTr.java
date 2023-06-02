@@ -34,7 +34,7 @@ public class StatusTr {
     @Column(name = "andamento", length = 200)
     private String andamento;
 
-    @OneToMany(mappedBy = "status_tr_id")
+    @OneToMany(mappedBy = "statusTr_id")
     private List<TermoReferencia> TermosReferencia;
        
 }

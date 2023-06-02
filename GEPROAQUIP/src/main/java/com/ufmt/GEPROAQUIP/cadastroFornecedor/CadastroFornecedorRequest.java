@@ -1,16 +1,18 @@
 package com.ufmt.GEPROAQUIP.cadastroFornecedor;
 
+import java.util.Date;
+
 import lombok.Data;
 
 public class CadastroFornecedorRequest {
     
   
-private Data data;
+private Date data;
 
-public void setData(Data data) {
+public void setData(Date data) {
     this.data = data;
 }
-public Data getData() {
+public Date getData() {
     return data;
 }
 

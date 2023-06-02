@@ -1,5 +1,6 @@
 package com.ufmt.GEPROAQUIP.cadastroFornecedor;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -35,7 +36,7 @@ public class CadastroFornecedor {
     private int id;
     @Column (name = "data")
     @Temporal(TemporalType.DATE)
-    private Data data;
+    private Date data;
     @Column (name = "nome", length = 200)
     private String nome;
     @Column(name = "cnpj", length = 200)
@@ -47,6 +48,6 @@ public class CadastroFornecedor {
     @Column(name = "fone", length = 30)
     private String fone;
 
-    @OneToMany(mappedBy = "cadastro_fornecedor_id")
+    @OneToMany(mappedBy = "cadastroFornecedor_id")
     private List<NotaFiscal> notasFiscais;
 }

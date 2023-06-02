@@ -39,6 +39,6 @@ public class StatusPpagamento {
     @Column(name = "ocorrencia", length = 300)
     private String ocorrencia;
 
-     @OneToMany(mappedBy = "status_ppagamento_id")
+     @OneToMany(mappedBy = "statusPpagamento_id")
      private List<ProcessoPagamento> processospagamentos;
 }

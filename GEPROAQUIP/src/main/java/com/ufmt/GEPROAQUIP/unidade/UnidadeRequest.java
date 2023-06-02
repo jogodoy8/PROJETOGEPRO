@@ -2,14 +2,14 @@ package com.ufmt.GEPROAQUIP.unidade;
 
 public class UnidadeRequest {
 
-    private int Id;
-   
-    public void setId(int id) {
-      Id = id;
-    }
+  private String nome;
     
-    public int getId() {
-      return Id;
-    }
-        
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
+
+  public String getNome() {
+    return nome;
+  }
+                
   }

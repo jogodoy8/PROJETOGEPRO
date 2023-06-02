@@ -54,7 +54,7 @@ public class UnidadeController {
   @PostMapping (path = "/cadastrar")
   public ResponseEntity cadastrar(@RequestBody UnidadeRequest request){
     Unidade unidade = new Unidade();
-    unidade.setId(request.getId());
+    unidade.setNome(request.getNome());
     
     try {
       repository.save(unidade);
@@ -69,7 +69,7 @@ public class UnidadeController {
   public ResponseEntity atualizar(@PathVariable int id,
                                 @RequestBody UnidadeRequest request){
     Unidade unidade = new Unidade();
-    unidade.setId(id);
+    unidade.setNome(request.getNome());
     
     try {
       repository.save(unidade);

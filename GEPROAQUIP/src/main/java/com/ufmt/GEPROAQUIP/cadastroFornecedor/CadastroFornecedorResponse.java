@@ -1,5 +1,7 @@
 package com.ufmt.GEPROAQUIP.cadastroFornecedor;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CadastroFornecedorResponse {
-  private Data data;
+  private Date data;
   private String nome;
   private String cnpj;
   private String endereco;

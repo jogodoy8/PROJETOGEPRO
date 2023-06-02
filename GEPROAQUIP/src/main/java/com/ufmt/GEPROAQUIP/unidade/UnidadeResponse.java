@@ -9,10 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UnidadeResponse {
   private int id;
+  private String nome;
 
   public static UnidadeResponse from(Unidade entidade){
     UnidadeResponse response = new UnidadeResponse();
-    response.setId(entidade.getId());
+    response.setNome(entidade.getNome());;
     return response;
   }
 }

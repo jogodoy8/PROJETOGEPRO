@@ -42,14 +42,14 @@ public class NotaFiscal {
     private Date data;
     @Column(name = "valor")
     private double valor;
-    @Column(name = "emprenho", nullable = false)
+    @Column(name = "empenho", nullable = false)
     private boolean  empenho;
     @Column(name = "liquidacao", nullable = false)
     private boolean  liquidacao;
     @Column(name = "pagamento", nullable = false)
     private boolean  pagamento; 
 
-    @OneToMany(mappedBy = "nota_fiscal_id")
+    @OneToMany(mappedBy = "notaFiscal_id")
     private List<ItemNf> itensNf;
     
     @ManyToOne

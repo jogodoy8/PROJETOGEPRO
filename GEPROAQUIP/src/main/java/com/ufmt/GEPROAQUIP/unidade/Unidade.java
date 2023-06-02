@@ -2,6 +2,7 @@ package com.ufmt.GEPROAQUIP.unidade;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,8 @@ public class Unidade {
     @Id
     @GeneratedValue(generator = "seqUnidade", strategy = GenerationType.SEQUENCE)
     private int id;
+    @Column(name = "nome", length = 200)
+    private String nome;
 
     @OneToMany(mappedBy = "unidade")
     private List<Setor> setores;

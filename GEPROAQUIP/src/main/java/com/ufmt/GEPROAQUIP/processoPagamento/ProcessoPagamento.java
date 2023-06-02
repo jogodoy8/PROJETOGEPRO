@@ -58,7 +58,7 @@ public class ProcessoPagamento {
     @Column(name = "observacao", length = 300)
     private String observacao;
 
-    @OneToMany(mappedBy = "processo_pagamento_id")
+    @OneToMany(mappedBy = "processoPagamento_id")
     private List<NotaFiscal> notasFiscais;
     
     @ManyToOne
